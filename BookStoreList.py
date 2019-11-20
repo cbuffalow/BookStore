@@ -1,7 +1,8 @@
 def main():
+    import pickle
     run = True
     cashBalance = 1000
-    titles, authors, prices = [], [], []
+    bookstore = titles, authors, prices = [], [], []
 
     while run:
         mainmenu = input('''What would you like to do?
@@ -10,6 +11,8 @@ def main():
                                 R. Reduce book prices across the board by 2%
                                 I. Increase book prices across the board by 2%
                                 V. Display inventory
+                                P. Save current inventory
+                                O. Open and load an inventory
                                 Q. Quit
                                         :  ''')
         if mainmenu.upper() == "A":  # add book
@@ -96,6 +99,33 @@ def main():
                 print("Anticipated profit/revenue: " + str(format(profit, '.2f')))
 
             print("Current cash balance: " + str(cashBalance))
+
+        elif mainmenu.upper() == "P":  #pickles list and clears current inv
+
+            savename = input("What would you like to call the file you will save the inventory too: ")
+            pickle_out = open(savename, "wb")
+            titles_obj = titles
+            authors_obj = authors
+            prices_obj = prices
+            pickle.dump(titles_obj, pickle_out)
+            pickle.dump(authors_obj, pickle_out)
+            pickle.dump(prices_obj, pickle_out)
+            pickle_out.close()
+            del titles[:]
+            del authors[:]
+            del prices[:]
+            print(bookstore)
+        elif mainmenu.upper() == "O":
+
+            readfile = input("What is the file name you of the inventory you would like to open: ")
+            pickle_in = open(readfile, "rb")
+            titles_obj = pickle.load(pickle_in)
+            authors_obj = pickle.load(pickle_in)
+            prices_obj = pickle.load(pickle_in)
+            titles = titles_obj
+            authors = authors_obj
+            prices = prices_obj
+
         elif mainmenu.upper() == "Q":
             print("Exiting...")
             run = False
