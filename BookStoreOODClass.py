@@ -1,16 +1,12 @@
-class BookStore(object):
-    bookstore = titles, authors, costs = [], [], []
-
 class Book(object):
+    bookstore = titles, authors, prices = [], [], []
 
-    def __in
+    def __init__(self, title, author, cost):
+        self.title = title
+        self.author = author
+        self.cost = cost
 
-    def __init__(self, titles, authors, costs):
-        self.titles = titles
-        self.authors = authors
-        self.cost = costs
-
-    def addbook(title, author, cost):
+    def addbook(self, title, author, cost):
         title.append(title)
         author.append(author)
         cost.append(int(cost))

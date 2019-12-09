@@ -1,6 +1,5 @@
-from BookStoreOODClass import BookStore
+from BookStoreOODClass import Book
 
-bs = BookStore
 cashbalance = 1000
 run = True
 
@@ -19,7 +18,7 @@ while run:
         titleAdd = input("What is the title of the book you are adding: ")
         authorAdd = input("What is the authors name: ")
         costAdd = input("What is the price of this book: ")
-        bs.addbook(titleAdd, authorAdd, costAdd)
+        Book.addbook(titleAdd, authorAdd, costAdd)
 
 
 
