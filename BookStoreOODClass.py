@@ -19,8 +19,8 @@ class BookStore:
         print(self.bookstore)
 
     def sellbook(self, Book):
-        for i in self.bookstore:
-            i.remove(Book)
+        for Book in self.bookstore:
+            self.bookstore.remove(Book)
 
     def inventory(self):
         print(self.bookstore)
