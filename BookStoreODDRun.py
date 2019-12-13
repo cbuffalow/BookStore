@@ -2,10 +2,11 @@ from BookStoreOODClass import *
 
 
 def main():
+    run = True
     cashBalance = 1000
-    CountryClubBookStore = BookStore()
+    CountryClubBookStore = BookStore(1000)
 
-    while True:
+    while run:
         mainmenu = input('''What would you like to do?
                                         A. Add Book
                                         S. Sell Book
@@ -56,9 +57,25 @@ def main():
                 else:
                     print("Invalid Title.")
 
+        elif mainmenu.upper() == "R":
+            CountryClubBookStore.reduceprice()
+
+        elif mainmenu.upper() == "I":
+            CountryClubBookStore.increaseprice()
+
         elif mainmenu.upper() == "V":
             CountryClubBookStore.inventory()
-            print(cashBalance)
+
+        elif mainmenu.upper() == "P":
+            CountryClubBookStore.saveinv()
+
+        elif mainmenu.upper() == "O":
+            CountryClubBookStore.openinv()
+
+        elif mainmenu.upper() == "Q":
+            print("Exiting...")
+            run = False
+
 
 if __name__ == "__main__":
     main()
