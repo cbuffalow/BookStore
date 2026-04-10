@@ -1,6 +1,6 @@
 # all-for-fun
 
-Carson Buffalow |  csbrocket3@gmail.com
+Carson Buffalow |  carsonbuffalow@gmail.com
 
-Here are some projects I have made in Python!
+Here are some projects I've made in Python!
 
