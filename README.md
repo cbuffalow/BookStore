@@ -2,5 +2,5 @@
 
 Carson Buffalow |  csbrocket3@gmail.com
 
-Here are some school projects I have made in Python!
+Here are some projects I have made in Python!
 
